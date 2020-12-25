@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "required": [
+    "title"
+  ],
+  "title": "Blog",
+  "description": "A simple form to register a submission",
+  "properties": {
+    "title": {
+      "title": "Title of blog",
+      "description": "Please provide the author of the name",
+      "type": "string",
+      "pattern": "^[a-zA-Z\\s]+$"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "business",
+          "finance",
+          "startup",
+          "culture"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "sections": {
+      "type": "array",
+      "title": "Sections",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Subtitle",
+            "type": "string"
+          },
+          "email": {
+            "title": "Text",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
